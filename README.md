@@ -1,5 +1,7 @@
 # VibeStay – Student PG & Roommate Matching
 
+Student PG & Roommate Matching Web Application
+
 **Stack:** Python (FastAPI) · JavaScript (React + Vite) · Tailwind CSS · MySQL · JWT + Bcrypt
 
 ## Run it
