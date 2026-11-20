@@ -1,6 +1,3 @@
-Here is a clean, professional `README.md` ready to copy and paste directly into your GitHub repository:
-
-```markdown
 # 🏠 VibeStay — Student Accommodation & Roommate Finder
 
 VibeStay is a full-stack web application designed to help students find rooms and compatible roommates in one unified platform. Instead of sifting through scattered listings and guessing house rules, students can filter accommodations by location, budget, and lifestyle preferences (such as diet and sleep schedule) and send structured contact requests directly to listing owners.
