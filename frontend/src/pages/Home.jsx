@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import api, { errMsg } from "../api";
 import ListingCard from "../components/ListingCard.jsx";
 import { Field, Button, Notice, inputCls } from "../components/ui.jsx";
@@ -11,7 +11,7 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-  const search = async (filters = f) => {
+  const search = useCallback(async (filters) => {
     setLoading(true);
     setError("");
     const params = Object.fromEntries(Object.entries(filters).filter(([, v]) => v !== ""));
@@ -23,10 +23,10 @@ export default function Home() {
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
 
-  useEffect(() => { search(empty); }, []);
-  const set = (k) => (e) => setF({ ...f, [k]: e.target.value });
+  useEffect(() => { search(empty); }, [search]);
+  const set = (k) => (e) => setF((current) => ({ ...current, [k]: e.target.value }));
 
   return (
     <div>
@@ -41,7 +41,7 @@ export default function Home() {
 
       <div className="grid gap-6 lg:grid-cols-[260px_1fr]">
         <form
-          onSubmit={(e) => { e.preventDefault(); search(); }}
+          onSubmit={(e) => { e.preventDefault(); search(f); }}
           className="h-fit space-y-4 rounded-lg border border-line bg-panel p-5 lg:sticky lg:top-20"
         >
           <Field label="City"><input className={inputCls} value={f.city} onChange={set("city")} placeholder="Mumbai" /></Field>
