@@ -32,10 +32,10 @@ export default function Home() {
     <div>
       <section className="py-8">
         <h1 className="max-w-2xl font-display text-4xl font-bold leading-tight sm:text-5xl">
-          Find a room, and a roommate whose routine matches yours.
+          Smarter Roommates, Better Living
         </h1>
         <p className="mt-3 max-w-xl text-muted">
-          Filter by budget, area and lifestyle. Send a request straight to the owner, with no broker in between.
+          No brokers. No chaos. Just your next stay.
         </p>
       </section>
 
